@@ -1,9 +1,10 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import BeneficiaryScreen from './BeneficiaryScreen';
 import HomeScreen from './HomeScreen';
+import {TransactionProvider} from './TransactionContext';
 import TransactionScreen from './TransactionScreen';
-import { TransactionProvider } from './TransactionContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Transaction" component={TransactionScreen} />
+          <Stack.Screen name="Beneficiary" component={BeneficiaryScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </TransactionProvider>
